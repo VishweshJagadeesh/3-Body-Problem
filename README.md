@@ -18,7 +18,7 @@ The notebook provides:
 ### Contents
 
 * `main.ipynb`: Main notebook with math, theory, and code.
-* `main.py` (if applicable): ODE solver implementation.
+* `main.py` : ODE solver implementation.
 * `README.md`: Project overview and instructions.
 
 ### How to Run
