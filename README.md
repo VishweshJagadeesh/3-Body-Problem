@@ -18,26 +18,25 @@ Here $\vec{p} = [p_x, p_y, p_z]$ contains the coordinates of the planet.
 
 By using Newton's second law of motion on each planet:
 
-* On planet 1 ($\vec{p}_1$):
+- On planet 1 ($\vec{p}_1$):
+
 $$ m_1 \frac{d^2 \vec{p}_1}{dt^2} = G \left(\frac{m_3 \ m_1}{|\vec{p}_3 - \vec{p}_1|^3} \left(\vec{p}_3 - \vec{p}_1 \right)  +   \frac{m_2 \ m_1}{|\vec{p}_2 - \vec{p}_1|^3} \left(\vec{p} _2 - \vec{p}_1 \right) \right)$$
 
 resulting in:
 
-$$\boxed{ \frac{d^2 \vec{p}_1}{dt^2} = G m_3 \frac{\vec{p}_3 - \vec{p}_1}{|\vec{p}_3 - \vec{p}_1|^3} +  G m_2 \frac{\vec{p}_2 - \vec{p}_1}{|\vec{p}_2 - \vec{p}_1|^3} } $$
+\[
+\frac{d^2 \vec{p}_1}{dt^2} = G m_3 \frac{\vec{p}_3 - \vec{p}_1}{|\vec{p}_3 - \vec{p}_1|^3} + G m_2 \frac{\vec{p}_2 - \vec{p}_1}{|\vec{p}_2 - \vec{p}_1|^3}
+\]
 
-The work is repeated for the remaining planets ($\vec{p}_2$ and $\vec{p}_3$), finally obtaining the system of odinary differential equations ODE's:
+The work is repeated for the remaining planets (\(\vec{p}_2\) and \(\vec{p}_3\)), finally obtaining the system of ordinary differential equations ODE's:
 
-
-$$
-\boxed{
-\begin{array}{c}
-\displaystyle \frac{d^2 \vec{p}_1}{dt^2} = G m_3 \frac{\vec{p}_3 - \vec{p}_1}{|\vec{p}_3 - \vec{p}_1|^3} +  G m_2 \frac{\vec{p}_2 - \vec{p}_1}{|\vec{p}_2 - \vec{p}_1|^3} \\[0.2cm]
-\displaystyle \frac{d^2 \vec{p}_2}{dt^2} = G m_3 \frac{\vec{p}_3 - \vec{p}_2}{|\vec{p}_3 - \vec{p}_2|^3} +  G m_1 \frac{\vec{p}_1 - \vec{p}_2}{|\vec{p}_2 - \vec{p}_2|^3}\\[0.2cm]
-\displaystyle \frac{d^2 \vec{p}_3}{dt^2} = G m_1 \frac{\vec{p}_1 - \vec{p}_3}{|\vec{p}_1 - \vec{p}_3|^3} +  G m_2 \frac{\vec{p}_2 - \vec{p}_3}{|\vec{p}_2 - \vec{p}_3|^3}
-\end{array}
-} 
-$$
-
+\[
+\begin{aligned}
+\frac{d^2 \vec{p}_1}{dt^2} &= G m_3 \frac{\vec{p}_3 - \vec{p}_1}{|\vec{p}_3 - \vec{p}_1|^3} + G m_2 \frac{\vec{p}_2 - \vec{p}_1}{|\vec{p}_2 - \vec{p}_1|^3} \\
+\frac{d^2 \vec{p}_2}{dt^2} &= G m_3 \frac{\vec{p}_3 - \vec{p}_2}{|\vec{p}_3 - \vec{p}_2|^3} + G m_1 \frac{\vec{p}_1 - \vec{p}_2}{|\vec{p}_1 - \vec{p}_2|^3} \\
+\frac{d^2 \vec{p}_3}{dt^2} &= G m_1 \frac{\vec{p}_1 - \vec{p}_3}{|\vec{p}_1 - \vec{p}_3|^3} + G m_2 \frac{\vec{p}_2 - \vec{p}_3}{|\vec{p}_2 - \vec{p}_3|^3}
+\end{aligned}
+\]
 
 ### 4. Packaging our problem for Python
 #### Dimensionless version
