@@ -1,9 +1,15 @@
+'''
+Importing dependencies, make sure to "run pip install -r requirements.txt" before running 
+'''
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 import time
 
-# ------------------------------------------------------------------- #
+'''
+Defining initial conditions, edit them to see different results
+'''
 
 m1 = 1.0
 m2 = 1.0
@@ -24,7 +30,7 @@ initial_conditions = np.array([
     inital_velocity_1, inital_velocity_2, inital_velocity_3
 ]).ravel()
 
-# ------------------------------------------------------------------- #
+
 
 def system_odes(t, S, m1, m2, m3):
     p1, p2, p3 = S[0:3], S[3:6], S[6:9]
@@ -38,7 +44,7 @@ def system_odes(t, S, m1, m2, m3):
 
     return np.array([f1, f2, f3, df1_dt, df2_dt, df3_dt]).ravel()
 
-# ------------------------------------------------------------------- #
+
 
 
 time_s, time_e = 0, 7
@@ -69,7 +75,7 @@ p3x_sol = solution.y[6]
 p3y_sol = solution.y[7]
 p3z_sol = solution.y[8]
 
-# ------------------------------------------------------------------- #
+
 
 fig, ax = plt.subplots(subplot_kw={"projection":"3d"})
 
@@ -89,12 +95,14 @@ ax.set_zlabel("z")
 plt.grid()
 plt.legend()
 
-# ------------------------------------------------------------------- #
+
 
 
 from matplotlib.animation import FuncAnimation
 
-# -------  Animating the solutions ------- #
+'''
+Animating the Solution
+'''
 
 def update(frame):
     lower_lim = max(0, frame - 300)
@@ -137,5 +145,8 @@ def update(frame):
 
     return planet1_plt, planet1_dot, planet2_plt, planet2_dot, planet3_plt, planet3_dot 
 
+'''
+Saving the solution
+'''
 animation = FuncAnimation(fig, update, frames=range(0, len(t_points), 2), interval=10, blit=True)
-plt.show()
+animation.save(f"3_body_problem.gif")
