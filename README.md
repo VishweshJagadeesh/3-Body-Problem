@@ -6,7 +6,7 @@ This repository contains a Python implementation of the classical 3-body problem
 
 While the full mathematical formulation of the problem—including the derivation of the governing equations and dimensional analysis—can be quite detailed, all of that has been explained interactively in the accompanying Jupyter Notebook:
 
-👉 **[3-body-problem.ipynb](./3-body-problem.ipynb)**
+👉 **[main.ipynb](./main.ipynb)**
 
 The notebook provides:
 
